@@ -1,0 +1,71 @@
+{
+  "name": "RiskZone",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome da zona/bairro"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "baixo",
+        "moderado",
+        "alto",
+        "critico"
+      ],
+      "description": "N\u00edvel de risco geral"
+    },
+    "risk_types": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "alagamento",
+          "deslizamento",
+          "erosao",
+          "buraco",
+          "lencol_freatico_raso",
+          "contaminacao",
+          "inundacao"
+        ]
+      },
+      "description": "Tipos de riscos presentes na zona"
+    },
+    "latitude": {
+      "type": "number",
+      "description": "Latitude do centro da zona"
+    },
+    "longitude": {
+      "type": "number",
+      "description": "Longitude do centro da zona"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descri\u00e7\u00e3o dos riscos e caracter\u00edsticas geol\u00f3gicas"
+    },
+    "data_sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Fontes de dados (Prefeitura, IAT, Mineropar, jornais)"
+    },
+    "last_incident_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Data do \u00faltimo incidente registrado"
+    },
+    "incident_count": {
+      "type": "number",
+      "description": "N\u00famero de incidentes registrados"
+    }
+  },
+  "required": [
+    "name",
+    "risk_level",
+    "risk_types",
+    "latitude",
+    "longitude"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "name": "Occurrence",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "T\u00edtulo da ocorr\u00eancia"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "alagamento",
+        "deslizamento",
+        "erosao",
+        "buraco",
+        "contaminacao",
+        "inundacao",
+        "outros"
+      ],
+      "description": "Tipo da ocorr\u00eancia"
+    },
+    "zone": {
+      "type": "string",
+      "description": "Zona/bairro afetado"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Data da ocorr\u00eancia"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descri\u00e7\u00e3o detalhada"
+    },
+    "source": {
+      "type": "string",
+      "description": "Fonte da informa\u00e7\u00e3o"
+    },
+    "source_url": {
+      "type": "string",
+      "description": "Link para fonte original"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "leve",
+        "moderado",
+        "grave",
+        "muito_grave"
+      ],
+      "description": "Gravidade do incidente"
+    },
+    "latitude": {
+      "type": "number"
+    },
+    "longitude": {
+      "type": "number"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Imagem do local/ocorr\u00eancia"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "registrado",
+        "em_analise",
+        "resolvido"
+      ],
+      "default": "registrado"
+    }
+  },
+  "required": [
+    "title",
+    "type",
+    "zone",
+    "date"
+  ]
+}

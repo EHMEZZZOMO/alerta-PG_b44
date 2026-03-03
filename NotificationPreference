@@ -1,0 +1,49 @@
+{
+  "name": "NotificationPreference",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email do usu\u00e1rio"
+    },
+    "alert_types": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "chuva_intensa",
+          "alagamento",
+          "deslizamento",
+          "vendaval",
+          "granizo",
+          "todos"
+        ]
+      },
+      "description": "Tipos de alertas desejados"
+    },
+    "zones": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Zonas de interesse"
+    },
+    "min_severity": {
+      "type": "string",
+      "enum": [
+        "baixo",
+        "moderado",
+        "alto",
+        "critico"
+      ],
+      "default": "moderado"
+    },
+    "email_notifications": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "user_email"
+  ]
+}
